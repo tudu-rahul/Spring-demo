@@ -2,17 +2,22 @@ package com.example.test.entities;
 
 import lombok.Getter;
 import lombok.Setter;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Random;
 
 /**
  * Student class
  */
+@Entity
 public class Student {
 
     @Getter @Setter private String name;
     @Getter @Setter private String standard;
     @Getter @Setter private String section;
+    @Id
     @Getter @Setter private String roll;
 
     /**
@@ -42,6 +47,10 @@ public class Student {
         this.standard   = standard;
         this.section    = section;
         this.roll       = "";
+    }
+
+    public Student() {
+
     }
 
     /**
